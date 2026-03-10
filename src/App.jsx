@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
 
 import { Toaster } from 'sonner';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="min-h-screen flex flex-col font-sans text-slate-900">
         <Toaster position="top-center" richColors />
         <Navbar />
+        <WhatsAppButton />
         <main className="grow">
           <Routes>
             <Route path="/" element={<Home />} />

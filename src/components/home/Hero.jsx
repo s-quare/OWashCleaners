@@ -36,10 +36,11 @@ export default function Hero() {
       <div className="absolute inset-0 lg:relative lg:w-1/2 lg:h-full z-0">
         {/* Overlay only on mobile/md to help text readability */}
         <div className="absolute inset-0 bg-black/50 lg:bg-transparent z-10"></div>
+        <div className="absolute h-full w-[60%] bg-linear-to-r from-black/40 to-black/0 lg:bg-transparent z-10"></div>
         <img
           src="/images/hero-cleaning.jpg"
           alt="Cleaning and Pest Control Services"
-          className="w-full h-full object-cover lg:rounded-br-[30%]"
+          className="w-full h-full object-cover lg:rounded-br-[30%] blur-[3px] lg:blur-[0px]"
           onLoad={reveal}
         />
       </div>
@@ -53,8 +54,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-white lg:text-off-black"
         >
-          <p className="text-[10px] bg-white/50 text-off-black/80 font-bold w-fit px-2 rounded-full ">
-            <i className="bi bi-leaf text-green-300"></i> 100% Eco-friendly
+          <p className="text-[10px] mb-5 bg-white/50 text-off-black/80 w-fit px-2 py-px rounded-full ">
+            <i className="bi bi-leaf text-green-300"></i> 100% Eco-friendly Cleaning
             solutions
           </p>
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
@@ -75,9 +76,9 @@ export default function Hero() {
             </a>
             <Link
               to="/services"
-              className="inline-block text-sm bg-brand-gold text-white px-5 py-3 rounded-xl font-bold shadow-lg hover:bg-[#c6822e] transition-all"
+              className="inline-block text-sm bg-white text-slate-800 shadow-md px-5 py-3 rounded-xl font-bold hover:bg-[#c6822e] transition-all"
             >
-              Services
+              Our Services
             </Link>
           </div>
         </motion.div>
