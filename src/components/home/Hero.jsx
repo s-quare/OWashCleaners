@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { businessInfo } from "../../data/config";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [heroLoaded, setHeroLoaded] = useState(false);
@@ -9,11 +9,28 @@ export default function Hero() {
   const reveal = () => {
     setTimeout(() => {
       setHeroLoaded(true);
-    }, 1500);
+    }, 1000);
   };
+
+  useEffect(() => {
+    document.documentElement.style.overflow = heroLoaded ? "auto" : "hidden";
+    return () => {
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [heroLoaded]);
 
   return (
     <section className="relative md:pt-17 -top-16.5 w-full h-screen min-h-112.5 max-h-500 flex items-center overflow-hidden">
+      {!heroLoaded && (
+        <div className="fixed grid place-items-center z-1000 h-screen w-screen bg-white">
+          <div>
+            <div className="h-10 w-10 mx-auto mb-5 border-5 border-brand-gold/30 border-t-brand-gold rounded-full animate-spin" />
+            <p className="text-center text-xl tracking-wider font-bold text-gray-700">
+              OWashCleaners
+            </p>
+          </div>
+        </div>
+      )}
       {/* Background/Image Layer */}
       {/* Absolute & Full on mobile, becomes side-by-side on lg */}
       <div className="absolute inset-0 lg:relative lg:w-1/2 lg:h-full z-0">
@@ -65,17 +82,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-
-      {!heroLoaded && (
-        <div className="fixed grid place-items-center z-1000 h-full w-full bg-white">
-          <div>
-            <div className="h-10 w-10 mx-auto mb-5 border-5 border-brand-gold/30 border-t-brand-gold rounded-full animate-spin" />
-            <p className="text-center text-xl tracking-wider font-bold text-gray-700">
-              OWashCleaners
-            </p>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

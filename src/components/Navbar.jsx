@@ -1,8 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function Navbar() {
   const location = useLocation();
+  const path = location.pathname;
+
+  useEffect(()=>{
+    if(path !== '/contact') {
+      window.scroll(0,0)
+    }
+  }, [path])
   
   const navLinks = [
     { name: 'Home', path: '/', icon: 'bi-house-door-fill' },
@@ -11,8 +19,10 @@ export default function Navbar() {
     { name: 'Contact', path: '/contact', icon: 'bi-chat-fill' },
   ];
 
+
+
   return (
-    <header className="sticky top-4 z-50 px-4">
+    <header className="sticky top-4 z-50 px-2 xs:px-4 md:px-6">
       <motion.nav 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
