@@ -6,9 +6,11 @@ import QuickQuote from "../components/home/QuickQuote";
 
 export default function Services() {
   return (
-    <main className="">
+    <main className="relative">
       <ServicesHero />
-      <div className='pb-10'>
+
+      <div className="relative bg-brand-cream pt-10 rounded-t-3xl">
+        <div className='pb-10'>
         <h2 className='text-4xl font-bold text-center mt-15 text-gray-800'>Our Services</h2>
         {servicesDetailed.map((service, index) => (
           <ServiceDetail
@@ -21,6 +23,8 @@ export default function Services() {
       </div>
       <QuickQuote />
       <ServiceFAQ />
+      </div>
+      
     </main>
   );
 }

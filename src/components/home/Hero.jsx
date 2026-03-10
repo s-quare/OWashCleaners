@@ -1,8 +1,17 @@
 import { motion } from "framer-motion";
 import { businessInfo } from "../../data/config";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Hero() {
+  const [heroLoaded, setHeroLoaded] = useState(false);
+
+  const reveal = () => {
+    setTimeout(() => {
+      setHeroLoaded(true);
+    }, 1500);
+  };
+
   return (
     <section className="relative md:pt-17 -top-16.5 w-full h-screen min-h-112.5 max-h-500 flex items-center overflow-hidden">
       {/* Background/Image Layer */}
@@ -14,6 +23,7 @@ export default function Hero() {
           src="/images/hero-cleaning.jpg"
           alt="Cleaning and Pest Control Services"
           className="w-full h-full object-cover lg:rounded-br-[30%]"
+          onLoad={reveal}
         />
       </div>
 
@@ -26,14 +36,17 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-white lg:text-off-black"
         >
-          <p className='text-[10px] bg-white/50 text-off-black/80 font-bold w-fit px-2 rounded-full '><i className="bi bi-leaf text-green-300"></i> 100% Eco-friendly solutions</p>
+          <p className="text-[10px] bg-white/50 text-off-black/80 font-bold w-fit px-2 rounded-full ">
+            <i className="bi bi-leaf text-green-300"></i> 100% Eco-friendly
+            solutions
+          </p>
           <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-            The New Standard <br /> Of {" "}
+            The New Standard <br /> Of{" "}
             <span className="text-brand-gold">Pristine.</span>
           </h1>
           <p className="text-lg lg:text-slate-600 mb-8 max-w-md">
-            Expert cleaning, pest control, and laundry services for homes
-            and offices.
+            Expert cleaning, pest control, and laundry services for homes and
+            offices.
           </p>
 
           <div className="pt-5 flex gap-3 items-center">
@@ -52,6 +65,17 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
+
+      {!heroLoaded && (
+        <div className="fixed grid place-items-center z-1000 h-full w-full bg-white">
+          <div>
+            <div className="h-10 w-10 mx-auto mb-5 border-5 border-brand-gold/30 border-t-brand-gold rounded-full animate-spin" />
+            <p className="text-center text-xl tracking-wider font-bold text-gray-700">
+              OWashCleaners
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

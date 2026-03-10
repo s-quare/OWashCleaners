@@ -1,11 +1,11 @@
 
 export default function ServicesHero() {
   return (
-    <section className="relative flex items-center justify-center min-h-[80vh] py-24 overflow-hidden -mt-16.5">
+    <section className="sticky -top-40 z-0 flex items-center justify-center min-h-[80vh] py-24 overflow-hidden -mt-16.5">
       <img 
         src="/images/service-hero.jpg" 
         alt="Cleaning services"
-        className="absolute inset-0 w-full h-full object-cover z-0 blur-[3px]" 
+        className="absolute inset-0 w-full h-full object-cover z-0 blur-[2px]" 
       />
       <div className="absolute inset-0 bg-black/50 z-10"></div>
 

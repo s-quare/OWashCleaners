@@ -5,10 +5,10 @@ export default function Navbar() {
   const location = useLocation();
   
   const navLinks = [
-    { name: 'Home', path: '/', icon: 'bi-house-door' },
-    { name: 'Services', path: '/services', icon: 'bi-stars' },
-    { name: 'About', path: '/about', icon: 'bi-info-circle' },
-    { name: 'Contact', path: '/contact', icon: 'bi-telephone' },
+    { name: 'Home', path: '/', icon: 'bi-house-door-fill' },
+    { name: 'Services', path: '/services', icon: 'bi-grid-3x3-gap-fill' },
+    { name: 'About', path: '/about', icon: 'bi-person-fill' },
+    { name: 'Contact', path: '/contact', icon: 'bi-chat-fill' },
   ];
 
   return (
@@ -19,7 +19,7 @@ export default function Navbar() {
         className="mx-auto max-w-2xl bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-3 flex items-center justify-between"
       >
         {/* Logo Section */}
-        <Link to="/" className="flex items-center gap-1 font-bold text-lg">
+        <Link to="/" className={`flex items-center gap-1 font-bold text-lg ${location.pathname === '/' && 'pointer-none'}`}>
           <img src="/logo.png" alt="OWashCleaners Logo" className="w-6 h-6 object-contain" />
           <span className="text-sm text-zinc-800">OWashCleaners</span>
         </Link>
@@ -33,7 +33,7 @@ export default function Navbar() {
               title={link.name}
               className={`flex items-center gap-2 px-3 py-2 rounded-xl transition-all ${
                 location.pathname === link.path 
-                  ? 'bg-brand-blue text-white shadow-md' 
+                  ? 'bg-brand-gold text-white shadow-md pointer-none:' 
                   : 'text-slate-600 hover:bg-slate-100'
               }`}
             >
