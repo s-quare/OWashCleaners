@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@theme {
+  --color-brand-cream: #fdfbf7;
+  --color-off-white: #fafafa;
+  --color-off-black: #1a1a1a;
+  --color-brand-blue: #004aad;
+  --color-brand-gold: #db9238;
+
+  --breakpoint-xs: 480px;
+}
+
+@layer base {
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    background-color: var(--color-brand-cream);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-brand-cream);
+    color: var(--color-off-black);
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* Box Shadow for that "Floating Paper" look on large screens */
+    min-height: 100vh;
+    box-shadow: 0 0 50px rgba(0,0,0,0.02);
+  }
+
+}
+
+
