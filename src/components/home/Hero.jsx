@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section className="relative md:pt-17 -top-16.5 w-full h-screen min-h-112.5 max-h-500 flex items-center overflow-hidden">
       {!heroLoaded && (
-        <div className="fixed grid place-items-center z-1000 h-screen w-screen bg-white">
+        <div className="fixed top-0 right-0 left-0 bottom-0 grid place-items-center z-1000 h-screen w-screen bg-white">
           <div>
             <div className="h-10 w-10 mx-auto mb-5 border-5 border-brand-gold/30 border-t-brand-gold rounded-full animate-spin" />
           </div>
