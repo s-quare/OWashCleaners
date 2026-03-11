@@ -56,10 +56,11 @@ export default function Footer() {
         {/* Social / CTA */}
         <div>
           <h4 className="text-white font-semibold mb-4">Reach Out</h4>
-          <div className='flex gap-3 w-fit mx-auto'>
+          <div className='flex item-center justify-center gap-3 flex-wrap'>
             {businessInfo.socials.map((item) => (
             <a
               key={item.name}
+              title={item.name}
               href={item.link}
               target="_blank"
               rel="noreferrer"

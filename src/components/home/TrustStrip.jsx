@@ -21,7 +21,7 @@ export default function TrustStrip() {
 
   return (
     <>
-      <section className="py-20 px-6">
+      <section className="pb-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-base font-black uppercase tracking-[0.3em] text-brand-gold mb-6">
             OWashCleaners
